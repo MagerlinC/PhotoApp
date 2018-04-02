@@ -1,0 +1,17 @@
+<div class="col">
+  <div class="login-area">
+    <h1 class="login-header">Login</h1>
+    <div class="login-info">Use a local account to log in.</div>
+    <td>
+      <mat-form-field class="example-full-width">
+        <input matInput #userMail type="text" placeholder="E-mail" (keydown.enter)="login(userMail.value,userPass.value)">
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field class="example-full-width">
+        <input matInput #userPass type="password" placeholder="Password" (keydown.enter)="login(userMail.value,userPass.value)">
+      </mat-form-field>
+    </td>
+    <button mat-raised-button class="login-button" #loginButton (click)="login(userMail.value, userPass.value)">Log In</button>
+  </div>
+</div>

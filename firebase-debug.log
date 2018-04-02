@@ -1,0 +1,48 @@
+[debug] [2018-04-02T11:12:06.905Z] ----------------------------------------------------------------------
+[debug] [2018-04-02T11:12:06.909Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2018-04-02T11:12:06.910Z] CLI Version:   3.17.7
+[debug] [2018-04-02T11:12:06.910Z] Platform:      darwin
+[debug] [2018-04-02T11:12:06.910Z] Node Version:  v6.10.1
+[debug] [2018-04-02T11:12:06.911Z] Time:          Mon Apr 02 2018 13:12:06 GMT+0200 (CEST)
+[debug] [2018-04-02T11:12:06.926Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-02T11:12:06.972Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-02T11:12:06.973Z] > authorizing via signed-in user
+[debug] [2018-04-02T11:12:06.998Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-04-02T11:12:06.999Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/Gqy38ttDSjoGF6kuZz7BcRb2u34R-k8Cck16s0LxHMvoWVEt3nMLv8PVgT5lPH0L',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Mon Apr 02 2018 13:12:06 GMT+0200 (CEST)
+[debug] [2018-04-02T11:12:07.174Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-02T11:12:07.176Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/photoapp-37d7f  
+  
+ Mon Apr 02 2018 13:12:07 GMT+0200 (CEST)
+[debug] [2018-04-02T11:12:07.809Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-02T11:12:07.810Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/photoapp-37d7f/tokens  
+  
+ Mon Apr 02 2018 13:12:07 GMT+0200 (CEST)
+[debug] [2018-04-02T11:12:08.435Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-02T11:12:08.437Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/photoapp-37d7f  
+  
+ Mon Apr 02 2018 13:12:08 GMT+0200 (CEST)
+[debug] [2018-04-02T11:12:09.162Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/mac/Documents/Angular/PhotoApp'...
+[info] 
+[debug] [2018-04-02T11:12:09.169Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/497000845253/clients/_:getWebAppConfig  
+  
+ Mon Apr 02 2018 13:12:09 GMT+0200 (CEST)
+[debug] [2018-04-02T11:12:09.594Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-02T11:12:09.909Z] TypeError: Cannot read property 'public' of undefined
+    at Server.<anonymous> (/usr/local/lib/node_modules/firebase-tools/lib/serve/hosting.js:34:17)
+    at Server.g (events.js:291:16)
+    at emitNone (events.js:86:13)
+    at Server.emit (events.js:185:7)
+    at emitListeningNT (net.js:1288:10)
+    at _combinedTickCallback (internal/process/next_tick.js:77:11)
+    at process._tickDomainCallback (internal/process/next_tick.js:128:9)
+[error] 
+[error] Error: An unexpected error has occurred.

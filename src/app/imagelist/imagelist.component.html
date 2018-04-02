@@ -1,0 +1,14 @@
+<h1 class="image-list-title">
+  Your Images
+</h1>
+
+<div *ngFor="let image of images">
+  <app-image
+    [title]="image.title"
+    [bitstring]="image.bitstring"
+    [comments]="image.comments"
+    [sharedwith]="image.sharedwith"
+    [timestamp]="image.timestamp"
+    [uploader]="image.uploader">
+  </app-image>
+</div>
