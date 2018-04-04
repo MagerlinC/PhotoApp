@@ -4,3 +4,16 @@
   grid-column-gap: 5%;
   align-items: center;
 }
+
+.add-icon {
+  cursor: pointer;
+  position: fixed;
+  bottom: 4%;
+  right: 4%;
+  width: auto;
+  height: auto;
+  max-width: 3%;
+}
+.image-list-title {
+  font-size: 1.2em;
+}

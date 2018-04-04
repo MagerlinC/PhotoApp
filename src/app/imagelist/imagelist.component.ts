@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Image} from "../Image";
 import {DataService} from "../DataService";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-imagelist',
@@ -11,7 +12,7 @@ export class ImagelistComponent implements OnInit {
 
   images;
 
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService, private router: Router) {
     this.dataService.getImages().valueChanges().subscribe( (data) => {
       this.images = data;
     });
@@ -19,5 +20,7 @@ export class ImagelistComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  goToAddImage() {
+    this.router.navigate(['/addimage']);
+  }
 }

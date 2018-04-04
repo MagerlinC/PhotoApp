@@ -1,3 +1,20 @@
 .logout-icon {
-  max-width: 4%;
+  cursor: pointer;
+  max-width: 15%;
+  align-self: right;
+  justify-self: right;
+  padding-top: 3.5%;
+}
+mat-toolbar {
+  background-color: #673AB7;
+  color: white;
+}
+
+.title {
+  font-size: 1.3em;
+}
+
+mat-toolbar-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
