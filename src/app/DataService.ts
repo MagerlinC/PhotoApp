@@ -52,4 +52,15 @@ export class DataService {
   shareImage(id: number) {
 
   }
+
+  uploadImage(title, description, source) {
+    const image = {
+      comments: [],
+      sharedwith: [],
+      title: title,
+      description: description,
+      bitstring: source,
+    };
+    return this.db.list('/images').push(image);
+  }
 }

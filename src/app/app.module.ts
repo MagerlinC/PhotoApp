@@ -23,6 +23,7 @@ import {CommentComponent} from './comment/comment.component';
 import {ImageComponent} from './image/image.component';
 import {HeaderbarComponent} from './headerbar/headerbar.component';
 import {ImagelistComponent} from './imagelist/imagelist.component';
+import { AddimageComponent } from './addimage/addimage.component';
 
 
 const appRoutes: Routes = [
@@ -31,6 +32,11 @@ const appRoutes: Routes = [
   {
     path: 'images',
     component: ImagelistComponent,
+    canActivate: [OnlyLoggedInUsersGuard],
+  },
+  {
+    path: 'addimage',
+    component: AddimageComponent,
     canActivate: [OnlyLoggedInUsersGuard],
   },
   { path: '',
@@ -47,7 +53,8 @@ const appRoutes: Routes = [
     HeaderbarComponent,
     ImagelistComponent,
     LoginComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AddimageComponent
   ],
   imports: [
     BrowserModule,
