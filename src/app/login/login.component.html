@@ -13,5 +13,12 @@
       </mat-form-field>
     </td>
     <button mat-raised-button class="login-button" #loginButton (click)="login(userMail.value, userPass.value)">Log In</button>
+    <div class="forgot-section">
+      <h1>Forgot you password?</h1>
+      <mat-form-field class="example-full-width">
+        <input matInput #forgotInput type="text" placeholder="username" (keydown.enter)="forgotPassword(forgotInput.value)">
+      </mat-form-field>
+      <button mat-raised-button class="login-button" #forgotButton (click)="forgotPassword(forgotInput.value)">Request Password Reset</button>
+    </div>
   </div>
 </div>

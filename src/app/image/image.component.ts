@@ -8,13 +8,14 @@ import {DataService} from "../DataService";
   styleUrls: ['./image.component.scss']
 })
 export class ImageComponent implements OnInit {
-
+  @Input() id;
   @Input() title;
   @Input() comments;
   @Input() timestamp;
   @Input() sharedwith;
   @Input() uploader;
   @Input() bitstring;
+  @Input() description;
 
   constructor(private dataService: DataService, private domSanitizer: DomSanitizer) { }
 
@@ -26,5 +27,11 @@ export class ImageComponent implements OnInit {
   }
   getNameFromUid(uid: string) {
     return this.dataService.getNameFromUid(uid);
+  }
+  deleteImage() {
+    this.dataService.deleteImage(this.id);
+  }
+  shareImage() {
+    this.dataService.shareImage(this.id);
   }
 }

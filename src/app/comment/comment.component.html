@@ -1,3 +1,6 @@
-<p>
-  comment works!
-</p>
+<mat-card>
+  <mat-card-content>
+    <p class="contents">{{contents}}</p>
+    <p class="user-and-time">By {{dataService.getNameFromUid(user)}} on {{dateTimeFromMillis(timestamp)}}</p>
+  </mat-card-content>
+</mat-card>

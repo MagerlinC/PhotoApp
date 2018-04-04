@@ -5,48 +5,51 @@ import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
 import 'rxjs';
 import {Injectable} from '@angular/core';
 import {Image} from './Image';
-import {User} from "./User";
+import {User} from './User';
+import {Observable} from "rxjs";
 
 @Injectable()
 export class DataService {
+  users: User[];
   constructor(private db: AngularFireDatabase) {
+    this.getUsers();
   }
-  async getNameFromUid(uid: string) {
-    /*const users = await this.getUsers();
+  getNameFromUid(uid: string) {
+    const users: User[] = this.users;
     for (const user of users) {
       if (user.uid === uid) {
         return user.displayname;
       }
-    }*/
+    }
     return 'name not found';
   }
   getImages() {
-    const images = [];
-    this.db.list('/images').valueChanges().subscribe(data => {
-      for (const image of data) {
-        images.push(Image.fromJson(image));
-      }
-    });
-    return images;
+    // const images = [];
+    return this.db.list('/images');
+    // return images;
   }
 
   getImageBitString(id: number) {
     return this.db.list('/images/' + id + '/bitstring');
   }
 
-  // This goes nuts?
-  getUsers(): User[] {
+  getUsers() {
     const users = [];
     this.db.list('/users').valueChanges().subscribe(data => {
+      console.log('NEW USER DATA');
       for (const user of data) {
         users.push(User.fromJson(user));
       }
     });
-    console.log(users);
-    return users;
+    this.users = users;
   }
-
   getDb() {
     return this.db;
+  }
+  deleteImage(id: number) {
+    return this.db.list('/images/' + id).remove();
+  }
+  shareImage(id: number) {
+
   }
 }

@@ -12,7 +12,9 @@ export class ImagelistComponent implements OnInit {
   images;
 
   constructor(private dataService: DataService) {
-    this.images = this.dataService.getImages();
+    this.dataService.getImages().valueChanges().subscribe( (data) => {
+      this.images = data;
+    });
   }
 
   ngOnInit() {

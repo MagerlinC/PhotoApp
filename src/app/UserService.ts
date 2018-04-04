@@ -20,10 +20,7 @@ export class UserService {
   async login(email, password) {
     try {
       await this.afAuth.auth.signInWithEmailAndPassword(email, password);
-      console.log('awaiting user');
       await this.user.first().toPromise();
-      console.log('User Await succesful! - NAVIGATING!');
-      // console.log('User ID IS: ' + this.afAuth.auth.currentUserExists.uid);
       this.router.navigate(['/images']);
     } catch (Error) {
       alert(Error.message);
@@ -43,8 +40,5 @@ export class UserService {
   }
   getCurrentUserUid() {
     return this.afAuth.auth.currentUser.uid;
-  }
-  isAdmin() {
-    return true;
   }
 }

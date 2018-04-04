@@ -16,4 +16,8 @@ export class LoginComponent implements OnInit {
     this.userService.login(mail, pass);
     // location.reload();
   }
+  forgotPassword(username: string) {
+    // Send mysterious HTTP request with json of important info (link to password reset site)
+    alert(username);
+  }
 }
