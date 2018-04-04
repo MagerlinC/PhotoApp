@@ -1,0 +1,21 @@
+<div class="col">
+  <div class="login-area">
+    <h1 class="login-header">Add Image</h1>
+    <div class="login-info">Select and image to upload</div>
+    <td>
+      <mat-form-field class="example-full-width">
+        <input matInput #imgTitle type="text" placeholder="Title">
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field class="example-full-width">
+        <input matInput #imgDescription type="text" placeholder="Description">
+      </mat-form-field>
+    </td>
+    <mat-form-field class="example-full-width">
+      <input matInput #imgSrc type="text" placeholder="base64 string" (keydown.enter)="uploadImage(imgTitle, imgDescription, imgSrc)">
+    </mat-form-field>
+  </div>
+  <button mat-raised-button class="login-button" #loginButton (click)="uploadImage(imgTitle, imgDescription, imgSrc)">Upload Image</button>
+</div>
+
