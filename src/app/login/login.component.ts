@@ -1,5 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {UserService} from "../UserService";
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -8,7 +10,7 @@ import {UserService} from "../UserService";
 })
 export class LoginComponent implements OnInit {
   @ViewChild('loginButton') loginButton;
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private router: Router) {
   }
   ngOnInit() {
   }
@@ -18,6 +20,6 @@ export class LoginComponent implements OnInit {
   }
   forgotPassword(username: string) {
     // Send mysterious HTTP request with json of important info (link to password reset site)
-    alert(username);
+    this.router.navigate(['/pwreset']);
   }
 }

@@ -16,7 +16,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import {OnlyLoggedInUsersGuard} from 'app/OnlyLoggedInUsersGuard';
+import {OnlyLoggedInUsersGuard} from './OnlyLoggedInUsersGuard';
 import {UserService} from './UserService';
 import {DataService} from './DataService';
 import {CommentComponent} from './comment/comment.component';
@@ -24,7 +24,10 @@ import {ImageComponent} from './image/image.component';
 import {HeaderbarComponent} from './headerbar/headerbar.component';
 import {ImagelistComponent} from './imagelist/imagelist.component';
 import { AddimageComponent } from './addimage/addimage.component';
-
+import { PasswordResetComponent } from './password-reset/password-reset.component';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { PasswordDb } from './PasswordInMemoryRest';
+import { PasswordService } from './passwordservice';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent,
@@ -39,6 +42,10 @@ const appRoutes: Routes = [
     component: AddimageComponent,
     canActivate: [OnlyLoggedInUsersGuard],
   },
+  {
+    path: 'pwreset',
+    component: PasswordResetComponent,
+  },
   { path: '',
     redirectTo: '/login',
     pathMatch: 'full'
@@ -47,6 +54,7 @@ const appRoutes: Routes = [
 ];
 @NgModule({
   declarations: [
+    AddimageComponent,
     AppComponent,
     CommentComponent,
     ImageComponent,
@@ -54,7 +62,7 @@ const appRoutes: Routes = [
     ImagelistComponent,
     LoginComponent,
     PageNotFoundComponent,
-    AddimageComponent
+    PasswordResetComponent
   ],
   imports: [
     BrowserModule,
@@ -72,9 +80,10 @@ const appRoutes: Routes = [
     AngularFireDatabaseModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    HttpModule
+    HttpModule,
+    InMemoryWebApiModule.forRoot(PasswordDb)
   ],
-  providers: [OnlyLoggedInUsersGuard, DataService, UserService],
+  providers: [OnlyLoggedInUsersGuard, DataService, UserService, PasswordService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
