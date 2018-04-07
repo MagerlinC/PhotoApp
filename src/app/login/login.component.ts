@@ -8,6 +8,7 @@ import {UserService} from "../UserService";
 })
 export class LoginComponent implements OnInit {
   @ViewChild('loginButton') loginButton;
+  forgotIsOpen = false;
   constructor(private userService: UserService) {
   }
   ngOnInit() {
@@ -19,5 +20,8 @@ export class LoginComponent implements OnInit {
   forgotPassword(username: string) {
     // Send mysterious HTTP request with json of important info (link to password reset site)
     alert(username);
+  }
+  openForgot() {
+    this.forgotIsOpen = true;
   }
 }

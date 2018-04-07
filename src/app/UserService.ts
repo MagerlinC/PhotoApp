@@ -15,7 +15,7 @@ export class UserService {
   user = this.afAuth.authState;
   currentUserExists: Observable<boolean> = this.user.map(user => user !== null);
 
-  constructor(private afAuth: AngularFireAuth, private router: Router, private dataService: DataService) {
+  constructor(private afAuth: AngularFireAuth, private router: Router) {
   }
   async login(email, password) {
     try {
@@ -38,7 +38,7 @@ export class UserService {
   getCurrentUserMail() {
     return this.afAuth.auth.currentUser.email;
   }
-  getCurrentUserUid() {
+  getCurrentUserUid(): string {
     return this.afAuth.auth.currentUser.uid;
   }
 }

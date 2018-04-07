@@ -13,9 +13,9 @@
       </mat-form-field>
     </td>
     <mat-form-field class="example-full-width">
-      <input matInput #imgSrc type="text" placeholder="base64 string" (keydown.enter)="uploadImage(imgTitle, imgDescription, imgSrc)">
+      <input matInput #imgSrc type="text" placeholder="base64 string" (keydown.enter)="uploadImage(imgTitle.value, imgDescription.value, imgSrc.value)">
     </mat-form-field>
   </div>
-  <button mat-raised-button class="login-button" #loginButton (click)="uploadImage(imgTitle, imgDescription, imgSrc)">Upload Image</button>
+  <button mat-raised-button class="login-button" #loginButton (click)="uploadImage(imgTitle.value, imgDescription.value, imgSrc.value)">Upload Image</button>
 </div>
 
