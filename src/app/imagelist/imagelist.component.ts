@@ -10,11 +10,11 @@ import {Router} from "@angular/router";
 })
 export class ImagelistComponent implements OnInit {
 
-  images;
+  images: Image[];
 
   constructor(private dataService: DataService, private router: Router) {
-    this.dataService.getImages().valueChanges().subscribe( (data) => {
-      this.images = data;
+    this.dataService.getMyImages().then( res => {
+      this.images = res;
     });
   }
 
@@ -23,4 +23,6 @@ export class ImagelistComponent implements OnInit {
   goToAddImage() {
     this.router.navigate(['/addimage']);
   }
+
+
 }

@@ -13,7 +13,10 @@
   </mat-card-content>
   <mat-card-actions>
     <button mat-button (click)="deleteImage()">DELETE</button>
-    <button mat-button (click)="shareImage()">SHARE</button>
+    <button mat-button (click)="toggleDisplayShare()">SHARE</button>
+    <mat-form-field *ngIf="displayShare">
+      <input matInput #shareName placeholder="username" (keydown.enter)="shareImage(shareName.value)">
+    </mat-form-field>
     <p *ngFor="let comment of comments" class="comments">
       <app-comment
         [contents] = "comment.contents"

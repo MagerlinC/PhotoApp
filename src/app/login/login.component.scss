@@ -23,3 +23,10 @@ input {
   display: grid;
   grid-template-columns: 0.25fr;
 }
+
+.forgot-pass {
+  font-weight: lighter;
+  font-size: 1em;
+  text-decoration: underline;
+  cursor: pointer;
+}

@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   @ViewChild('loginButton') loginButton;
+
+  forgotIsOpen = false;
   constructor(private userService: UserService, private router: Router) {
   }
   ngOnInit() {
@@ -21,5 +23,8 @@ export class LoginComponent implements OnInit {
   forgotPassword(username: string) {
     // Send mysterious HTTP request with json of important info (link to password reset site)
     this.router.navigate(['/pwreset']);
+  }
+  openForgot() {
+    this.forgotIsOpen = true;
   }
 }

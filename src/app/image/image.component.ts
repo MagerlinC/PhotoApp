@@ -16,8 +16,10 @@ export class ImageComponent implements OnInit {
   @Input() uploader;
   @Input() bitstring;
   @Input() description;
+  displayShare = false;
 
-  constructor(private dataService: DataService, private domSanitizer: DomSanitizer) { }
+  constructor(private dataService: DataService, private domSanitizer: DomSanitizer) {
+  }
 
   ngOnInit() {
   }
@@ -31,7 +33,11 @@ export class ImageComponent implements OnInit {
   deleteImage() {
     this.dataService.deleteImage(this.id);
   }
-  shareImage() {
-    this.dataService.shareImage(this.id);
+  shareImage(targetName) {
+    this.dataService.shareImage(targetName, this.id);
+  }
+
+  toggleDisplayShare() {
+    this.displayShare = true;
   }
 }
